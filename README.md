@@ -1,58 +1,102 @@
-# 🌍 Buscador de CEP - Projeto Streamlit
+<div align="center">
 
-## 📋 Situação do Projeto
+<img src="logo.png" alt="Galvão Bueno CEP - Haja CEP!" width="420">
 
-**Você foi contratado como desenvolvedor Python** para criar uma aplicação web moderna que permita aos usuários buscar informações de endereços a partir de CEPs e visualizá-los em um mapa interativo. A aplicação deve ser intuitiva, responsiva e seguir as melhores práticas de desenvolvimento.
+# 🎙️ Galvão Bueno CEP
 
-## 🎯 Objetivo do Projeto
+### *Haja CEP!* Busque endereços pelo CEP e veja tudo no mapa.
 
-Desenvolver um sistema de consulta de CEP que:
-- Busque informações de endereço em tempo real
-- Exiba os resultados de forma organizada
-- Mostre a localização no mapa
-- Tenha uma interface profissional e amigável
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 
-## 🛠️ Tecnologias Utilizadas
+**[🚀 Acessar a aplicação online](https://projeto-05-busca-cep.streamlit.app)**
 
-- **Python 3.8+** - Linguagem de programação
-- **Streamlit** - Framework para aplicações web
-- **Pandas** - Manipulação de dados
-- **Requests** - Requisições HTTP para APIs
-- **AwesomeAPI** - API de consulta de CEPs brasileiros
+</div>
+
+---
+
+## 📖 Sobre o Projeto
+
+O **Galvão Bueno CEP** é uma aplicação web feita com **Streamlit** que permite:
+
+- 🔎 **Buscar CEP:** informe um CEP e receba o endereço completo, com a localização marcada em um mapa interativo.
+- 🧭 **Descobrir CEP:** digite um endereço e receba um link de busca no Google para encontrar o CEP correspondente.
+
+O projeto nasceu como atividade prática de desenvolvimento Python: consumir uma API REST, tratar dados com Pandas e entregar uma interface simples, intuitiva e responsiva.
+
+## 🎯 Objetivos
+
+- Buscar informações de endereço em tempo real
+- Exibir os resultados de forma organizada
+- Mostrar a localização no mapa
+- Oferecer uma interface profissional e amigável
+
+## ✨ Funcionalidades
+
+### 🔎 Buscar CEP
+- Validação do CEP (exatamente 8 dígitos numéricos)
+- Consulta em API externa
+- Exibição de CEP, endereço, bairro, cidade e estado
+- Tratamento de erros: CEP inválido, CEP não encontrado e falhas na consulta
+
+### 🗺️ Mapa interativo
+- Localização do endereço exibida com `st.map`
+- Coordenadas (latitude e longitude) convertidas automaticamente em um `DataFrame`
+
+### 🧭 Descobrir CEP
+- Busca a partir de um endereço (ex.: `Rua Olga, Barueri, SP`)
+- Geração de link de busca no Google
+- Validação de campo vazio
+
+### 📱 Interface
+- Barra lateral com logo e menu de navegação
+- Layout adaptável a diferentes telas
+- Mensagens claras de sucesso e erro
+
+## 🛠️ Tecnologias
+
+| Tecnologia | Uso |
+|---|---|
+| **Python 3.8+** | Linguagem de programação |
+| **Streamlit** | Framework da aplicação web |
+| **Pandas** | Manipulação de dados e montagem do mapa |
+| **Requests** | Requisições HTTP à API de CEP |
+| **AwesomeAPI** | API de consulta de CEPs brasileiros |
 
 ## 📁 Estrutura do Projeto
 
 ```
-buscador-cep/
+Projeto_05_Busca_Cep/
 │
-├── app.py                 # Aplicação principal Streamlit
-├── BuscarCep.py           # Módulo de busca de CEP
-├── requirements.txt       # Dependências do projeto
-├── README.md             # Documentação do projeto
-└── .gitignore           # Arquivos ignorados pelo Git
+├── .devcontainer/      # Configuração do ambiente de desenvolvimento
+├── app.py              # Aplicação principal (interface Streamlit)
+├── BuscarCep.py        # Módulo com as funções buscar_cep e descobrir_cep
+├── logo.png            # Logo exibido na barra lateral e neste README
+├── requirements.txt    # Dependências do projeto
+└── README.md           # Documentação
 ```
 
-## ⚙️ Instalação e Configuração
+## ⚙️ Como Executar
 
 ### Pré-requisitos
-- Python 3.8 ou superior instalado
-- Git para controle de versão
-- Conexão com internet para instalação de pacotes
+- Python 3.8 ou superior
+- Git
+- Conexão com a internet
 
-### Passo a Passo para Executar o Projeto
+### Passo a passo
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/buscador-cep.git
-   cd buscador-cep
+   git clone https://github.com/GalvaoLabs/Projeto_05_Busca_Cep.git
+   cd Projeto_05_Busca_Cep
    ```
 
 2. **Crie um ambiente virtual (recomendado)**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   # ou
-   venv\Scripts\activate    # Windows
+   source venv/bin/activate   # Linux/Mac
+   venv\Scripts\activate      # Windows
    ```
 
 3. **Instale as dependências**
@@ -65,65 +109,34 @@ buscador-cep/
    streamlit run app.py
    ```
 
-5. **Acesse no navegador**
-   - Abra: http://localhost:8501
-   - A aplicação estará rodando localmente
+5. **Acesse no navegador:** <http://localhost:8501>
 
-## 📋 Dependências do Projeto
+### 📦 requirements.txt
 
-Crie o arquivo `requirements.txt`:
 ```txt
-streamlit==1.28.0
-pandas==2.0.3
-requests==2.31.0
+streamlit
+pandas
+requests
 ```
 
-Instale com:
-```bash
-pip install -r requirements.txt
-```
+## 🚀 Como Usar
 
+1. Abra a aplicação e escolha uma opção na **barra lateral**.
+2. Em **Buscar CEP**, digite um CEP válido (somente números, ex.: `01001000`) e clique em **Buscar**.
+3. Veja o endereço completo e a **localização no mapa**.
+4. Em **Descobrir CEP**, digite o endereço (ex.: `Rua Olga, Barueri, SP`), clique em **Descobrir** e abra o link de busca gerado.
 
-## 🎨 Funcionalidades Implementadas
+## 🧪 CEPs para Testar
 
-### ✅ Busca de CEP
-- Validação de CEP (8 dígitos numéricos)
-- Consulta em API externa
-- Exibição de endereço completo
-- Tratamento de erros robusto
+| CEP | Local |
+|---|---|
+| `01001000` | Praça da Sé, São Paulo/SP |
+| `22030060` | Copacabana, Rio de Janeiro/RJ |
+| `40130150` | Comércio, Salvador/BA |
+| `70002900` | Asa Norte, Brasília/DF |
 
-### 🗺️ Mapa Interativo
-- Visualização da localização
-- Coordenadas convertidas automaticamente
-- Integração com Streamlit Maps
+## 🧠 Habilidades Praticadas
 
-### 📱 Interface Responsiva
-- Sidebar com navegação
-- Layout adaptável
-- Mensagens de sucesso/erro
-- Design profissional
-
-## 🚀 Como Usar a Aplicação
-
-1. **Inicie a aplicação** com `streamlit run app.py`
-2. **Selecione "Buscar CEP"** na sidebar
-3. **Digite um CEP** válido (apenas números, ex: 01001000)
-4. **Clique em "Buscar"** para consultar
-5. **Visualize** o endereço e mapa
-
-## 🧪 Testes Recomendados
-
-Teste com estes CEPs exemplos:
-- **01001000** - Praça da Sé, São Paulo/SP
-- **22030060** - Copacabana, Rio de Janeiro/RJ
-- **40130150** - Comércio, Salvador/BA
-- **70002900** - Asa Norte, Brasília/DF
-
-
-
-## 👨‍💻 Habilidades Desenvolvidas
-
-Ao completar este projeto, os alunos terão praticado:
 - ✅ Desenvolvimento com Streamlit
 - ✅ Consumo de APIs REST
 - ✅ Manipulação de dados com Pandas
@@ -132,3 +145,12 @@ Ao completar este projeto, os alunos terão praticado:
 - ✅ Versionamento com Git
 - ✅ Documentação de projetos
 
+## 🙌 Créditos
+
+Projeto baseado em [msousa07/Projeto_05_Busca_Cep](https://github.com/msousa07/Projeto_05_Busca_Cep), adaptado e mantido por [GalvaoLabs](https://github.com/GalvaoLabs).
+
+<div align="center">
+
+**Bem, amigos... achou o CEP!** 🎉
+
+</div>
