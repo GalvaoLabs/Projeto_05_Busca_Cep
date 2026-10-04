@@ -18,7 +18,7 @@ opcoes = ["Buscar CEP", "Descobrir CEP"]
 ##### BARRA LATERAL #####
 
 st.sidebar.title("Qual é o CEP Arnaldo ?")
-st.sidebar.image("logo.png")
+st.sidebar.image("logo.png", width=400)
 st.sidebar.write("Aplicação para buscar endereço a partir do CEP e entrar localização no mapa.")
 escolha = st.sidebar.selectbox("Escolha uma opção", opcoes)
 
