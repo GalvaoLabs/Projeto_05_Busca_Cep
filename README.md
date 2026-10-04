@@ -145,6 +145,12 @@ requests
 - ✅ Versionamento com Git
 - ✅ Documentação de projetos
 
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+> O logo (`logo.png`) não está coberto por essa licença.
+
 ## 🙌 Créditos
 
 Projeto baseado em [msousa07/Projeto_05_Busca_Cep](https://github.com/msousa07/Projeto_05_Busca_Cep), adaptado e mantido por [GalvaoLabs](https://github.com/GalvaoLabs).
